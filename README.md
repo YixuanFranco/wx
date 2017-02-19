@@ -1,3 +1,10 @@
+1. [Django+ Nginx + uWsgi 部署 (微信公众号开发一)](http://yixuan.li/geek/2017/02/16/Django/)
+ * Version 0   : Feb.16, 2017
+ * Version 0.1 : Feb 19, 2017 
+2. [通过微信的 token (Django微信公众号开发二)](http://yixuan.li/geek/2017/02/19/wechatToken/)
+ * Version 0   : Feb.19, 2017
+
+
 #### 缘起  
 想用 Python 开发一个微信公众号. 实现的需求是:   
 > 用户向公众号发送视频, 视频被后台接收. 通过阿里云的视频转码服务进行压缩转码, 然后把转码好的视频发送回给用户.   
