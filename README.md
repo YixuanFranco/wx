@@ -1,12 +1,12 @@
 1. [Django+ Nginx + uWsgi 部署 (微信公众号开发一)](http://yixuan.li/geek/2017/02/16/Django/)
  * Version 0   : Feb.16, 2017
- * Version 0.1 : Feb 19, 2017 
+ * Version 0.1 : Feb. 19, 2017 
 2. [通过微信的 token (Django微信公众号开发二)](http://yixuan.li/geek/2017/02/19/wechatToken/)
  * Version 0   : Feb.19, 2017
 3. [微信的接收与回复 (Django微信公众号开发三)](http://yixuan.li/geek/2017/02/20/wechatResp/)
- * Version 0: Feb 20, 2017 此处实力懵逼 ing, 
-
-**注意**: 此刻代码没有任何 fork 及抄作业价值, 如果你已经过了 token 了 就不要浪费时间了. 如果还没有, 可以从第一篇文章开始抄作业. 谢谢大家.  
+ * Version 0: Feb. 20, 2017 此处实力懵逼 ing, 
+ * Version 1: Feb. 20, 2017 代码已经可以抄走啦.
+ * BTW: 我在view.py 里加了一个 blogPost, 是我自己测试服务器用的, 你们删了就可以了.
 
 #### 缘起  
 想用 Python 开发一个微信公众号. 实现的需求是:   
