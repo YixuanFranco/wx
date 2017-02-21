@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import time
 
+
 class Msg(object):
     def __init__(self):
         pass
@@ -26,7 +27,7 @@ class TextMsg(Msg):
         </xml>
         """
         return XmlForm.format(**self.__dict)
-    
+
 class ImageMsg(Msg):
     def __init__(self, toUserName, fromUserName, mediaId):
         self.__dict = dict()
@@ -47,3 +48,52 @@ class ImageMsg(Msg):
         </xml>
         """
         return XmlForm.format(**self.__dict)
+
+    class VoiceMsg(Msg):
+        def __init__(self, toUserName, fromUserName, mediaId):
+            self.__dict = dict()
+            self.__dict['ToUserName'] = toUserName
+            self.__dict['FromUserName'] = fromUserName
+            self.__dict['CreateTime'] = int(time.time())
+            self.__dict['MediaId'] = mediaId
+
+        def send(self):
+            XmlForm = """
+            <xml>
+            <ToUserName><![CDATA[{ToUserName}]]></ToUserName>
+            <FromUserName><![CDATA[{FromUserName}]]></FromUserName>
+            <CreateTime>{CreateTime}</CreateTime>
+            <MsgType><![CDATA[voice]]></MsgType>
+            <Voice>
+            <MediaId><![CDATA[{MediaId}]]></MediaId>
+            </Voice>
+            </xml>
+            """
+            return XmlForm.format(**self.__dict)
+
+        class VideoMsg(Msg):
+            def __init__(self, toUserName, fromUserName, mediaId):
+                self.__dict = dict()
+                self.__dict['ToUserName'] = toUserName
+                self.__dict['FromUserName'] = fromUserName
+                self.__dict['CreateTime'] = int(time.time())
+                self.__dict['MediaId'] = mediaId
+                self.__dict['Title'] = title
+                self.__dict['Description'] = description
+
+            def send(self):
+                XmlForm = """
+                <xml>
+                <ToUserName><![CDATA[{ToUserName}]]></ToUserName>
+                <FromUserName><![CDATA[{FromUserName}]]></FromUserName>
+                <CreateTime>{CreateTime}</CreateTime>
+                <MsgType><![CDATA[video]]></MsgType>
+                <Video>
+                <MediaId><![CDATA[{MediaId}]]></MediaId>
+                <Title><![CDATA[{Title}]]></Title>
+                <Description><![CDATA[{Description}]]></Description>
+                </Video>
+                </xml>
+                 """
+                return XmlForm.format(**self.__dict)
+
